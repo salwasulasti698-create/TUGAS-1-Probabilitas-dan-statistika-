@@ -1,0 +1,67 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n = 5;
+    double p = 0.60;
+    double q = 1 - p;
+    double hasil = 0;
+
+    for (int k = 3; k <= 5; k++) {
+        double kombinasi = 1;
+
+        for (int i = 1; i <= k; i++) {
+            kombinasi *= (n - i + 1.0) / i;
+        }
+
+        hasil += kombinasi * pow(p, k) * pow(q, n-k);
+    }
+
+    cout << "Peluang prediksi benar = " << hasil << endl;
+    cout << "Persentase = " << hasil * 100 << "%" << endl;
+
+    return 0;
+}
+
+
+
+OUTPUT
+Peluang prediksi benar = 0.68256
+Persentase = 68.256%
+
+
+0.68256
+0.3456
+0.2592
+0.07776
+
+
+
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double lambda = 1;
+    int k = 2;
+
+    double hasil = (exp(-lambda) * pow(lambda, k)) / tgamma(k + 1);
+
+    cout << "Peluang = " << hasil << endl;
+    cout << "Persentase = " << hasil * 100 << "%" << endl;
+
+    return 0;
+}
+
+OUTPUT
+Peluang = 0.18394
+Persentase = 18.394%
+
+
+
+
+
+0.183939721
